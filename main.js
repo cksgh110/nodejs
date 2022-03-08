@@ -10,12 +10,10 @@ var app = http.createServer(function(request,response){
       _url = '/index.html';
     }
     if(_url == '/favicon.ico'){
-      response.writeHead(404);
-      response.end();
-      return;
+      return response.writeHead(404);
     }
     response.writeHead(200);
-    response.end(fs.readFileSync(__dirname + __url));
+    response.end(queryData.id);
 
 });
 app.listen(3000);
